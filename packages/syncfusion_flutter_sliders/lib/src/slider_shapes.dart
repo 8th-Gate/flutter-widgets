@@ -389,6 +389,33 @@ class SfThumbShape {
   }
 }
 
+class SfThumbShapeWidget extends SfThumbShape {
+
+  final DrawShape drawShape;
+
+ const SfThumbShapeWidget({required this.drawShape});
+  @override
+  void paint(PaintingContext context, Offset center,
+
+      {required RenderBox parentBox,
+        required RenderBox? child,
+        required SfSliderThemeData themeData,
+        SfRangeValues? currentValues,
+        dynamic currentValue,
+        required Paint? paint,
+        required Animation<double> enableAnimation,
+        required TextDirection textDirection,
+        required SfThumb? thumb}) {
+    drawShape.draw(context);
+  }
+
+}
+
+abstract  class DrawShape{
+
+  void draw(BuildContext context);
+}
+
 /// Base class for [SfSlider], [SfRangeSlider] and [SfRangeSelector] dividers
 /// shapes.
 class SfDividerShape {
