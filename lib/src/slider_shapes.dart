@@ -406,14 +406,14 @@ class SfThumbShapeWidget extends SfThumbShape {
         required Animation<double> enableAnimation,
         required TextDirection textDirection,
         required SfThumb? thumb}) {
-    drawShape.draw(context,center);
+    drawShape.draw(context,center,themeData);
   }
 
 }
 
 abstract  class DrawShape{
 
-  void draw(BuildContext context,Offset center,);
+  void draw(PaintingContext context,Offset center,  SfSliderThemeData themeData,);
 }
 
 /// Base class for [SfSlider], [SfRangeSlider] and [SfRangeSelector] dividers
